@@ -1,0 +1,51 @@
+body{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    background: rgb(248, 248, 248);
+
+}
+main{
+    width: 100%;
+}
+.miniCardsOuter{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px
+}
+.miniCardsOuter1{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px 0px;
+}
+.miniCards{
+    width: 45%;
+    height: 120px;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    position: relative;
+}
+.miniCards>h2{
+    font-size: 40px;
+}
+.miniCards>p{
+    font-size: 20px;
+}
+.miniCardArrow{
+    position: absolute;
+    width: 50px;
+}
+#minicard1{
+    background: rgb(241, 194, 38);
+}
+#minicard2{
+    background: rgb(248, 116, 138);
+}
+#minicard3{
+    background: rgb(245, 73, 245);
+}
+#minicard4{
+    background: rgb(63, 142, 233);
+}
