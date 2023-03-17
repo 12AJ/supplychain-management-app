@@ -5,7 +5,7 @@
 </head>
 <body>
    
-    <nav >
+    <nav>
          <h2>Supply Chain Management System</h2>
 </nav>
 </body>

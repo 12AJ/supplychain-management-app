@@ -16,27 +16,3 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('dashboard');
 });
-
-Route::get('/orderManagement', function () {
-    return view('orderManagement');
-});
-
-Route::get('/pending-orders', function () {
-    return view('pendingOrders');
-});
-
-Route::get('/all-orders', function () {
-    return view('orderManagement');
-});
-
-Route::get('/returned-orders', function () {
-    return view('returnedOrders');
-});
-
-Route::get('/sold-orders', function () {
-    return view('soldOrders');
-});
-
-Route::get('/canceled-orders', function () {
-    return view('canceledOrders');
-});
