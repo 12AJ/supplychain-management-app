@@ -3,16 +3,18 @@ body{
     width: 100%;
     flex-direction: row;
     background: rgb(248, 248, 248);
-
 }
 main{
     width: 100%;
+}
+.graphCardsOuter{
+    display: flex;
 }
 .miniCardsOuter{
     width: 50%;
     display: flex;
     flex-direction: column;
-    margin-top: 30px
+    margin-top: 30px;
 }
 .miniCardsOuter1{
     display: flex;
@@ -21,22 +23,29 @@ main{
 }
 .miniCards{
     width: 45%;
+    min-width: 200px;
     height: 120px;
     border-radius: 5px;
     padding: 10px;
     color: white;
     position: relative;
+    overflow: hidden;
 }
 .miniCards>h2{
-    font-size: 40px;
+    font-size: 35px;
 }
 .miniCards>p{
-    font-size: 20px;
+    font-size: 15px;
+    position: relative;
 }
 .miniCardArrow{
     position: absolute;
-    width: 50px;
+    width: 25px;
+    rotate: 180deg;
+    left: 10px;
+    bottom: 5px;
 }
+
 #minicard1{
     background: rgb(241, 194, 38);
 }
@@ -49,3 +58,124 @@ main{
 #minicard4{
     background: rgb(63, 142, 233);
 }
+.pendingImg{
+    width:70px;
+    position: absolute;
+    right: 10%;
+    top: 25%;
+}
+.pendingDelivery{
+    width:80px;
+    position: absolute;
+    right: 10%;
+    top: 20%;
+}
+.productReturn{
+    width:80px;
+    position: absolute;
+    right: 10%;
+    bottom:10%;
+}
+.retailers{
+    width:70px;
+    position: absolute;
+    right: 10%;
+    bottom:10%;
+}
+
+.graphImg{
+    margin-top: 30px;
+    width: 50% !important;
+}
+
+.links{
+    display: contents;
+}
+
+.content {
+    display: flex;
+    margin-left: 10%;
+    margin-top: 10%;
+    position: relative;
+  }
+  .content>h3{
+    position: absolute;
+    left: 22%;
+    top: -50px;
+
+  }
+  .content>h2{
+    position: absolute;
+    left: 30%;
+    bottom: 40px;
+    z-index: 100;
+    color: #1abc9c;
+    font-size: 30px;
+  }
+  .mask {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    width: 25rem;
+    height: 11rem;
+  }
+  
+  .semi-circle {
+    position: relative;
+    display: block;
+    width: 25rem;
+    height: 11rem;
+    background: linear-gradient(to right, #c0392b 0%, #f1c40f 50%, #1abc9c 100%);
+    border-radius: 50% 50% 50% 50%/100% 100% 0% 0%;
+  }
+  .semi-circle::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+    z-index: 2;
+    display: block;
+    width: 19rem;
+    height: 8rem;
+    margin-left: -4.375rem;
+    background: #fff;
+    border-radius: 50% 50% 50% 50%/100% 100% 0% 0%;
+  }
+  
+  .semi-circle--mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25rem;
+    height: 25rem;
+    background: transparent;
+    transform: rotate(120deg) translate3d(0, 0, 0);
+    transform-origin: center center;
+    backface-visibility: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+  .semi-circle--mask::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0%;
+    z-index: 2;
+    display: block;
+    width: 28rem;
+    height: 10rem;
+    margin: -10px 0 0 -3px;
+    background: #f2f2f2;
+    border-radius: 50% 50% 50% 50%/100% 100% 0% 0%;
+  }
+  
+  .gauge--1 .semi-circle {
+    background: #1abc9c;
+  }
+  
+  .graphCardsOuter2{
+    display: flex;
+    align-items: center;
+  }
+  .content{
+    width: 50%;
+  }
