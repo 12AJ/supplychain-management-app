@@ -28,7 +28,7 @@ table td,th{
 }
 
 table th{
-    font-size: 20px;
+    /* font-size: 20px; */
     font-weight: 600;
 
 }
@@ -36,7 +36,7 @@ table th{
 table .tableheading{
     letter-spacing: 2px;
     font-size: 20px;
-    font-weight: 800;
+    font-weight: 600;
     
 }
 
@@ -89,4 +89,11 @@ table .tableheading{
 .searchbtn:hover{
     color: black;
     transition: 0.8s;
+}
+
+.mybtns{
+    width: 100px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 15px;
 }

@@ -20,24 +20,22 @@
 
         <div class="addRetailerDiv"><button onclick="retailerFormPopup(true)">Add Retailer</button></div>
         <div class="retailerFormOuter">
-          <form action="">
+          <form action="/addretailer" method="POST">
+            @csrf
             <button type="button" onclick="retailerFormPopup(false)" class="btn-close" aria-label="Close"></button>
             <h3>Add Retailer</h3>
 
-            <label for="">First Name</label>
-            <input type="text" class="form-control">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" name="name">
             <br>
-            <label for="">Last Name</label>
-            <input type="text" class="form-control">
+            <label for="phone">Phone number</label>
+            <input type="text" class="form-control" name="phone">
             <br>
-            <label for="">Phone number</label>
-            <input type="text" class="form-control">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" name="email">
             <br>
-            <label for="">Email</label>
-            <input type="number" class="form-control">
-            <br>
-            <label for="">Address</label>
-            <textarea type="text" rows="4" cols="50" class="form-control"></textarea>
+            <label for="address">Address</label>
+            <textarea type="text" rows="4" cols="50" class="form-control" name="address"></textarea>
             <br>
               <button type="submit" class="btn btn-success">Submit</button>
           </form>
@@ -45,15 +43,8 @@
         
 
 
-        <table style="undefined;table-layout: fixed; width: 1042px">
-            <colgroup>
-            <col style="width: 67px">
-            <col style="width: 268px">
-            <col style="width: 157px">
-            <col style="width: 195px">
-            <col style="width: 253px">
-            <col style="width: 102px">
-            </colgroup>
+        <table style="width:97%">
+           
             <thead>
               <tr>
                 <th>Sr. no.</th>
@@ -65,83 +56,19 @@
               </tr>
             </thead>
             <tbody>
+              @foreach($fetchedData as $retailer)
               <tr>
-                <td>1</td>
-                <td>Raj Ingale</td>
-                <td>1234567890</td>
-                <td>raj@gmail.com</td>
-                <td>Karve nagar , pune, 411053</td>
+                <td>{{$retailer->id}}</td>
+                <td>{{$retailer->name}}</td>
+                <td>{{$retailer->phone}}</td>
+                <td>{{$retailer->email}}</td>
+                <td>{{$retailer->address}}</td>
                 <td> 
-                    <a href=""><button class="btn editBtn" ><i class="fa fa-edit"></i></button></a>  
-                    <button class="btn deleteBtn"><i class="fa fa-trash"></i></button>
+                    <a href="/updateretailer/{{$retailer->id}}"><button class="btn editBtn" ><i class="fa fa-edit"></i></button></a>  
+                    <a href="/deleteretailer/{{$retailer->id}}"><button class="btn deleteBtn"><i class="fa fa-trash"></i></button></a>
                 </td>
               </tr>
-              <tr>
-                <td>1</td>
-                <td>Raj Ingale</td>
-                <td>1234567890</td>
-                <td>raj@gmail.com</td>
-                <td>Karve nagar , pune, 411053</td>
-                <td> 
-                    <a href=""><button class="btn editBtn" ><i class="fa fa-edit"></i></button></a>  
-                    <button class="btn deleteBtn"><i class="fa fa-trash"></i></button>
-                </td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Raj Ingale</td>
-                <td>1234567890</td>
-                <td>raj@gmail.com</td>
-                <td>Karve nagar , pune, 411053</td>
-                <td> 
-                    <a href=""><button class="btn editBtn" ><i class="fa fa-edit"></i></button></a>  
-                    <button class="btn deleteBtn"><i class="fa fa-trash"></i></button>
-                </td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Raj Ingale</td>
-                <td>1234567890</td>
-                <td>raj@gmail.com</td>
-                <td>Karve nagar , pune, 411053</td>
-                <td> 
-                    <a href=""><button class="btn editBtn" ><i class="fa fa-edit"></i></button></a>  
-                    <button class="btn deleteBtn"><i class="fa fa-trash"></i></button>
-                </td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Raj Ingale</td>
-                <td>1234567890</td>
-                <td>raj@gmail.com</td>
-                <td>Karve nagar , pune, 411053</td>
-                <td> 
-                    <a href=""><button class="btn editBtn" ><i class="fa fa-edit"></i></button></a>  
-                    <button class="btn deleteBtn"><i class="fa fa-trash"></i></button>
-                </td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Raj Ingale</td>
-                <td>1234567890</td>
-                <td>raj@gmail.com</td>
-                <td>Karve nagar , pune, 411053</td>
-                <td> 
-                    <a href=""><button class="btn editBtn" ><i class="fa fa-edit"></i></button></a>  
-                    <button class="btn deleteBtn"><i class="fa fa-trash"></i></button>
-                </td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Raj Ingale</td>
-                <td>1234567890</td>
-                <td>raj@gmail.com</td>
-                <td>Karve nagar , pune, 411053</td>
-                <td> 
-                    <a href=""><button class="btn editBtn" ><i class="fa fa-edit"></i></button></a>  
-                    <button class="btn deleteBtn"><i class="fa fa-trash"></i></button>
-                </td>
-              </tr>
+              @endforeach
             </tbody>
             </table>
 

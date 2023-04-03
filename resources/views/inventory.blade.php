@@ -20,136 +20,56 @@
 
         <div class="addPrductDiv"><button onclick="productFormPopup(true)">Add Product</button></div>
         <div class="productFormOuter">
-          <form action="">
+          <form action="/addinventory" method="POST">
+            @csrf
             <button type="button" onclick="productFormPopup(false)" class="btn-close" aria-label="Close"></button>
             <h3>Add Product</h3>
 
-            <label for="">Product Code</label>
-            <input type="text" class="form-control">
+            <label for="product_code">Product Code</label>
+            <input type="number" class="form-control" name="product_code">
             <br>
-            <label for="">Product Name</label>
-            <input type="text" class="form-control">
+            <label for="product_name">Product Name</label>
+            <input type="text" class="form-control" name="product_name">
             <br>
-            <label for="">Model</label>
-            <input type="text" class="form-control">
+            <label for="product_model">Model</label>
+            <input type="text" class="form-control" name="product_model">
             <br>
-            <label for="">Product Selling Price</label>
-            <input type="number" class="form-control">
+            <label for="product_selling_price">Product Selling Price</label>
+            <input type="number" class="form-control" name="product_selling_price">
             <br>
-            <label for="">Vendor</label>
-            <input type="text" class="form-control">
-            <br>
-            <label for="">Product Image</label>
-            <input type="file" class="form-control">
-            <br>
-            <label for="">Product description</label>
-            <textarea type="text" rows="4" cols="50" class="form-control"></textarea>
+            <label for="product_description">Product description</label>
+            <textarea type="text" rows="4" cols="50" class="form-control" name="product_description"></textarea>
             <br>
               <button type="submit" class="btn btn-success">Submit</button>
           </form>
         </div>
-        <table class="productsTable" style="undefined;table-layout: fixed; width: 967px">
-            <colgroup>
-            <col style="width: 160px">
-            <col style="width: 145px">
-            <col style="width: 120px">
-            <col style="width: 140px">
-            <col style="width: 130px">
-            <col style="width: 284px">
-            <col style="width: 90px">
-            <col style="width: 120px">
-            </colgroup>
+        <table class="productsTable" style=" width: 97%">
+            
             <thead>
               <tr>
                 <th>Product Code</th>
                 <th>Name</th>
-                <th>model</th>
+                <th>Model</th>
                 <th>selling price</th>
-                <th>vendor</th>
-                <th>description</th>
-                <th>image</th>
-                <th>action</th>
+                <th>Description</th>             
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
+              @foreach($fetchedData as $data)
               <tr>
-                <td>112</td>
-                <td>Fruit</td>
-                <td>apple</td>
-                <td>50</td>
-                <td>raj</td>
-                <td>fresh fruit in market most selling</td>
-                <td><button class="btn viewBtn"><i class="fa fa-eye"></i></button></td>
+              <td>{{$data->product_code}}</td>
+                <td>{{$data->product_name}}</td>
+                <td>{{$data->product_model}}</td>
+                <td>{{$data->product_selling_price}}</td>
+                <td>{{$data->product_description}}</td> 
                 <td>  
-                     <a href=""><button class="btn editBtn" ><i class="fa fa-edit"></i></button></a>  
-                    <button class="btn deleteBtn"><i class="fa fa-trash"></i></button>
+                     <a href="/updateinventory/{{$data->id}}"><button class="btn editBtn" ><i class="fa fa-edit"></i></button></a>  
+                     <a href="/deleteinventory/{{$data->id}}"> <button class="btn deleteBtn"><i class="fa fa-trash"></i></button></a>
                 </td>
               </tr>
-              <tr>
-                <td>112</td>
-                <td>Fruit</td>
-                <td>apple</td>
-                <td>50</td>
-                <td>raj</td>
-                <td>fresh fruit in market most selling</td>
-                <td><button class="btn viewBtn"><i class="fa fa-eye"></i></button></td>
-                <td>  
-                    <a href=""><button class="btn editBtn" ><i class="fa fa-edit"></i></button></a>  
-                   <button class="btn deleteBtn"><i class="fa fa-trash"></i></button>
-               </td>
-              </tr>
-              <tr>
-                <td>112</td>
-                <td>Fruit</td>
-                <td>apple</td>
-                <td>50</td>
-                <td>raj</td>
-                <td>fresh fruit in market most selling</td>
-                <td><button class="btn viewBtn"><i class="fa fa-eye"></i></button></td>
-                <td>  
-                    <a href=""><button class="btn editBtn" ><i class="fa fa-edit"></i></button></a>  
-                   <button class="btn deleteBtn"><i class="fa fa-trash"></i></button>
-               </td>
-              </tr>
-              <tr>
-                <td>112</td>
-                <td>Fruit</td>
-                <td>apple</td>
-                <td>50</td>
-                <td>raj</td>
-                <td>fresh fruit in market most selling</td>
-                <td><button class="btn viewBtn"><i class="fa fa-eye"></i></button></td>
-                <td>  
-                    <a href=""><button class="btn editBtn" ><i class="fa fa-edit"></i></button></a>  
-                   <button class="btn deleteBtn"><i class="fa fa-trash"></i></button>
-               </td>
-              </tr>
-              <tr>
-                <td>112</td>
-                <td>Fruit</td>
-                <td>apple</td>
-                <td>50</td>
-                <td>raj</td>
-                <td>fresh fruit in market most selling</td>
-                <td><button class="btn viewBtn"><i class="fa fa-eye"></i></button></td>
-                <td>  
-                    <a href=""><button class="btn editBtn" ><i class="fa fa-edit"></i></button></a>  
-                   <button class="btn deleteBtn"><i class="fa fa-trash"></i></button>
-               </td>
-              </tr>
-              <tr>
-                <td>112</td>
-                <td>Fruit</td>
-                <td>apple</td>
-                <td>50</td>
-                <td>raj</td>
-                <td>fresh fruit in market most selling</td>
-                <td><button class="btn viewBtn"><i class="fa fa-eye"></i></button></td>
-                <td>  
-                    <a href=""><button class="btn editBtn" ><i class="fa fa-edit"></i></button></a>  
-                   <button class="btn deleteBtn"><i class="fa fa-trash"></i></button>
-               </td>
-              </tr>
+              @endforeach
+            
             </tbody>
             </table>
 

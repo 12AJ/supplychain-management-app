@@ -8,6 +8,7 @@
    
 }
 
+    
 .ordermain{
     display: flex;
 
@@ -187,4 +188,15 @@ cursor: pointer;
 .searchbtn:hover{
     color: black;
     transition: 0.8s;
+}
+
+.addedProductRow{
+    display:none;
+}
+
+#addnewproductbtn{
+    cursor: pointer;
+    width: 120px;
+    background-color: blue;
+    color: aliceblue;
 }

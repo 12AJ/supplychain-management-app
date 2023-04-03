@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,35 +16,72 @@
     <main>
 
         @include('layouts/navbar')
-       
+
+<?php
+        $countall = 0;
+        $countpending = 0;
+        $countreturned = 0;
+        $countsold = 0;
+        $countcanceled = 0;
+        foreach($fetchedData as $data){
+                $countall++;
+
+                if($data->order_status === "pending order"){
+                    $countpending++;
+                }
+                 if($data->order_status === "returned order"){
+                    $countreturned++;
+                } 
+                if($data->order_status === "Sold Order"){
+                    $countsold++;
+                }
+                if($data->order_status === "Canceled Order"){
+                    $countcanceled++;
+                }
+        }
+
+
+
+
+       ?>
         <div class="graphCardsOuter">
 
         <div class="miniCardsOuter">
+        <a class="links" href="/pending-orders">
             <div class="miniCardsOuter1">
                 <div id="minicard1" class="miniCards">
-                    <h2>30</h2>
+                   
+                    <h2>{{$countpending}}</h2>
                     <p>Pending</p>
                     <p>Orders</p>
                     <img class="miniCardArrow" src="https://cdn-icons-png.flaticon.com/512/54/54517.png" alt="" srcset="">
                     <img class="pendingImg" src="https://icons.veryicon.com/png/o/business/my-library/pending-disposal-1.png" alt="" srcset="">
                 </div>
+                </a>
+
+                <a class="links" href="/all-orders">
                 <div id="minicard2" class="miniCards">
-                    <h2>52</h2>
+                    <h2>{{$countall}}</h2>
                 <p>Orders</p>
                 <p>To Deliver</p>
                 <img class="miniCardArrow" src="https://cdn-icons-png.flaticon.com/512/54/54517.png" alt="" srcset="">
                 <img class="pendingDelivery" src="https://www.freeiconspng.com/thumbs/delivery-icon/shopping-delivery-icon-5.png" alt="" srcset="">
                 </div>
+                </a>
                 
             </div>
+
+            <a class="links" href="/returned-orders">
             <div class="miniCardsOuter1">
             <div id="minicard3" class="miniCards">
-                <h2>10</h2>
+                <h2>{{$countreturned}}</h2>
                 <p>Product</p>
                 <p>Returns</p>
                 <img class="miniCardArrow" src="https://cdn-icons-png.flaticon.com/512/54/54517.png" alt="" srcset="">
                 <img class="productReturn" src="https://static.thenounproject.com/png/3539472-200.png" alt="" srcset="">
             </div>
+            </a>
+
             <a class="links" href="/retailers">
             <div id="minicard4" class="miniCards">
                 <h2>80</h2>
@@ -68,7 +106,7 @@
                   <div class="semi-circle--mask"></div>
               </div>
             </div>
-              <h2>40 / 100</h2>
+              <h2>{{$countsold}}/{{$countall}}</h2>
           </section>
     </div>
     </main>

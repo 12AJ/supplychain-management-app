@@ -13,12 +13,12 @@
         <div id="sidebar" class="">
 
             <div class="sidebar-header">
-                <a href="/dashboard"><h3>logo</h3></a>
+                <a href="/home"><h3>logo</h3></a>
             </div>
 
             <ul class="list-unstyled ">
                 <li class=@yield('dashboard')>
-                    <a href="/dashboard">Dashboard</a>
+                    <a href="/home">Dashboard</a>
                 </li>
                 <li class=@yield('mainInventory')>
                     <a href="/mainInventory">Main<br>Inventory</a>
@@ -27,7 +27,7 @@
                     <a href="/warehouse">Warehouse</a>
                 </li>
                 <li class=@yield('orderManagement')>
-                    <a href="/orderManagement">Order<br>Management</a>
+                    <a href="/all-orders">Order<br>Management</a>
                 </li>
                 <li class=@yield('retailers')>
                     <a href="/retailers">Retailers</a>

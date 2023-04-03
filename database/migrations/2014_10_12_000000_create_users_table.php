@@ -13,13 +13,17 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->string('customer_name');
+            $table->string('customer_email');
+            $table->string('order_status');
+            $table->double('total_sales');
+            $table->double('shipping_charges');
+            $table->double('tax_percent');
+            $table->double('net_total');
+            $table->double('amout_paid');
+            $table->string('payment_status');
             $table->timestamps();
         });
     }
@@ -31,6 +35,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('orders');
     }
 }

@@ -8,6 +8,9 @@
     
 }
 
+
+    
+
 .ordermainclass{
     margin-left: 135px;
     width: 90%;
@@ -32,7 +35,7 @@ table td,th{
 }
 
 table th{
-    font-size: 20px;
+    /* font-size: 20px; */
     font-weight: 600;
 
 }
@@ -40,7 +43,7 @@ table th{
 table .tableheading{
     letter-spacing: 2px;
     font-size: 20px;
-    font-weight: 800;
+    font-weight: 600;
     
 }
 
@@ -105,5 +108,16 @@ table .tableheading{
     background-color:rgb(164, 236, 150) ;
     text-align: center;
    
+}
+
+.productList{
+    overflow-y: scroll;
+}
+
+.mybtns{
+    width: 100px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 15px;
 }
 

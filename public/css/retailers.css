@@ -62,17 +62,19 @@ main{
   display: flex;
 }
 table, th, td {
-    border: 1px solid black;
+    border: 1px solid grey;
     border-collapse: collapse;
     text-align: center;
-    padding: 5px;
+    padding: 3px;
     background: white;
   }
   table{
+    border: 2px solid grey;
     margin: 30px auto;
   }
   th{
-    font-weight: 100;
+    font-weight: 600;
+    
   }
   .viewBtn{
     background-color: #969696 !important;
