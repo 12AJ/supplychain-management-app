@@ -30,9 +30,8 @@
             <th>Order Id</th>
             <th>Order Date</th>
             <th>Retailer</th>
-            <th>Update Order</th>
-            <th>Delete Order</th>
              <th>See in detail </th>
+             <th>Actions</th>
         </tr>
         <?php
     foreach($fetchedData as $value){
@@ -42,10 +41,13 @@
             <td>{{$value->id}}</td>
             <td>{{$value->created_at}}</td>
             <td>{{$value->customer_name}}</td>
-            <td><button class="mybtns"><a  href="/updateStatus/{{$value->id}}" >update order</a></button></td>
-            <td><button class="mybtns"><a href="deleteOrder/{{$value->id}}">Delete</a></button></td>
+            <!-- <td><button class="mybtns"><a  href="/updateStatus/{{$value->id}}" >update order</a></button></td>
+            <td><button class="mybtns"><a href="deleteOrder/{{$value->id}}">Delete</a></button></td> -->
             <td><a href="/see-details/{{$value->id}}"><i class="fa-solid fa-eye"></i></a></td>
-
+            <td> 
+                    <a href="/updateStatus/{{$value->id}}"><button class="btn editBtn" ><i class="fa fa-edit"></i></button></a>  
+                    <a href="deleteOrder/{{$value->id}}"><button class="btn deleteBtn"><i class="fa fa-trash"></i></button></a>
+                </td>
         </tr>
 
         <?php
